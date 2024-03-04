@@ -4,24 +4,22 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class Exercice {
-
-    public Map<Integer, String> f1(int a1, List<Integer> a2) {
-        HashMap<Integer, String> a7 = new HashMap<Integer, String>();
-        int a5 = 0;
-        StringBuilder a9 = new StringBuilder();
-        for (int a3 = 0; a3 < a2.size() && a3 < a1; a3++) {
-            int a6 = a2.get(a3);
-            int a10 = a6 - 1;
-            if (a6 >= 0 && (a10) < 20) {
-                a9.append(a6).append(" ");
+    
+    public Map<Integer, String> f1(int numerochoisi, List<Integer> listeEntiers) {
+        HashMap<Integer, String> resultat = new HashMap<Integer, String>();
+        int compteur = 0;
+        StringBuilder resultatstring = new StringBuilder();
+        for (int occurence = 0; occurence < listeEntiers.size() && occurence < numerochoisi; occurence++) {
+            int valeuroccurence = listeEntiers.get(occurence);
+            if (valeuroccurence >= 0 && (valeuroccurence-1) < 20) {
+                resultatstring.append(valeuroccurence).append(" ");
             } else {
-                a5++;
+                compteur++;
             }
         }
-        a9.append("\n");
-        a7.put(a5, a9.toString());
-        return a7;
+        resultatstring.append("\n");
+        resultat.put(compteur, resultatstring.toString());
+        return resultat;
     }
 }
